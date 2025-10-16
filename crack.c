@@ -23,20 +23,12 @@ int main(int argc, char *argv[])
         exit(1);
     }
 
-    // TODO: Read the hashes file into an array.
-    //   Use either a 2D array or an array of arrays.
-    //   Use the loadFile function from fileutil.c
-    //   Uncomment the appropriate statement.
     int size, count, length;
     count = 0;
     char (*hashes)[HASH_LEN] = loadFile2D(argv[1], &size); //create 2d array of hashes from hash file
     
-    // CHALLENGE1: Sort the hashes using qsort.
     qsort(hashes, size, sizeof(char[HASH_LEN]), alphabetic); //sort list of hashes alphabetically
 
-    // TODO
-    // Open the password file for reading.
-    // TODO
     char dictln[1000];
     // Open the dictionary file for reading.
     FILE *dictf = fopen(argv[2], "r");
@@ -67,14 +59,7 @@ int main(int argc, char *argv[])
 			printf("Not found!\n");
         }
     }
-    // For each password, hash it, then use the array search
-    // function from fileutil.h to find the hash.
-    // If you find it, display the password and the hash.
-    // Keep track of how many hashes were found.
-    // CHALLENGE1: Use binary search instead of linear search.
 
-    // TODO
-    // When done with the file:
     //   Close the file
     fclose(dictf);
     //   Display the number of hashes found.
