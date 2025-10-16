@@ -8,14 +8,6 @@ char (*loadFile2D(char *filename, int *size))[COLS];
 char *substringSearch2D(char *target, char (*lines)[COLS], int size);
 void free2D(char (*arr)[COLS]);
 
-// DIRECTIONS
-// Choose whether you are doing the 2D array or
-// the array of arrays.
-// For the 2D array,
-//    implement loadFile2D, substringSearch2D, and free2D.
-// For the array of arrays, 
-//    implement loadFileAA, substringSearchAA, and freeAA.
-
 char (*loadFile2D(char *filename, int *size))[COLS]
 {
 	FILE *in = fopen(filename, "r");
@@ -25,8 +17,7 @@ char (*loadFile2D(char *filename, int *size))[COLS]
 	    exit(1);
 	}
 	
-	// TODO
-	// Allocate memory for an 2D array, using COLS as the width.
+	//Allocate memory for an 2D array, using COLS as the width.
 	char (*strs)[COLS]= malloc(10 * sizeof(char[COLS]));
 	// Read the file line by line into a buffer.
 	*size = 0;
@@ -64,7 +55,6 @@ char (*loadFile2D(char *filename, int *size))[COLS]
 
 // Search the array for the target string.
 // Return the found string or NULL if not found.
-
 
 char * substringSearch2D(char *target, char (*lines)[COLS], int size)
 {
